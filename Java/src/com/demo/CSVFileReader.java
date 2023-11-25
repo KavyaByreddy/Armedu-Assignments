@@ -9,7 +9,7 @@ public class CSVFileReader {
         String line = "";
         String csvSplitBy = ",";
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Demo.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("demo.csv"))) {
             while ((line = br.readLine()) != null) {
                 
                 String[] values = line.split(csvSplitBy);

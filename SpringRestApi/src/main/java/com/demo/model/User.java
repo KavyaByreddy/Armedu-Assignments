@@ -1,4 +1,4 @@
-package com.demo.entities;
+package com.demo.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +18,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table
+@Table(name="users")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Data
-public class Emp {
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,5 +36,15 @@ public class Emp {
 	
 	@Column(name="user_email")
 	private String email;
+
+	
+@OneToMany(cascade = CascadeType.ALL)
+@JoinColumn(name="addressId")
+private List<Address> address=new ArrayList<>();
+	
+	/*@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="addressId")
+	private Address address;*/
+	
 
 }
