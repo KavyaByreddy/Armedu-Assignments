@@ -37,14 +37,14 @@ public class User {
 	@Column(name="user_email")
 	private String email;
 
-	
+/*	
 @OneToMany(cascade = CascadeType.ALL)
 @JoinColumn(name="addressId")
-private List<Address> address=new ArrayList<>();
+private List<Address> address=new ArrayList<>();*/
 	
-	/*@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="addressId")
-	private Address address;*/
+	private Address address;
 	
 
 }
